@@ -9,7 +9,7 @@ const MainNavLink = ({ link, title }: Props) => {
     return (
         <Link
             to={link}
-            className="font-medium text-alc-light-gray hover:text-alc-light-gray/80 text-nowrap px-4 transition-colors duration-200" 
+            className="font-normal text-alc-light-gray hover:text-alc-light-gray/80 text-nowrap px-4 transition-colors duration-200" 
         >
             {title}
         </Link>

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import Logo from "@/assets/allocatr-neg-light.svg"
-import MainNavLink from "./MainNavLink";
+import MobileNav from "./MobileNav";
+import MainNav from "./MainNav";
 import { Button } from "./ui/button";
-import SearchBar from "./SeachBar";
 
 
 const Header = () => {
@@ -12,17 +12,17 @@ const Header = () => {
                 <Link to="/">
                     <img src={Logo} alt="" width={120} />
                 </Link>
-
-                <span className="flex items-center">
-                    <MainNavLink link={"/"} title={"Explore"}></MainNavLink>
-                    <MainNavLink link={"/"} title={"Post a task"}></MainNavLink>
-                    <MainNavLink link={"/"} title={"Become an allocat"}></MainNavLink>
-                    <SearchBar />
+                {/* Mobile Nav */}
+                <div className="lg:hidden flex items-center">
                     <Button className="mx-1"variant={"primary"}>Log in</Button>
-                    <Button className="mx-1" variant={"outline"}>Sign up</Button>
-                </span>            
-            </div>
-        </div>
+                    <MobileNav />            
+                </div>
+                {/* Main Nav */}
+                <div className="hidden lg:block">                    
+                    <MainNav />                
+                </div>            
+            </div>            
+        </div>        
     );
 };
 
