@@ -1,0 +1,68 @@
+import HomeAccordion from "@/components/HomeAccordion";
+import logoIcon from "@/assets/icon-variant-01.svg";
+import { Button } from "@/components/ui/button";
+import Heading from "@/components/Heading";
+import InfoCard from "@/components/InfoCard";
+
+const HomePage = () => {
+    return (
+        <div className="container mx-auto text-alc-gray px-4">
+            <div className=" flex flex-col gap-12 text-sm md:justify-center md:items-center md:flex-row">
+                <div className="md:max-w-[40%]">
+                    <HomeAccordion />
+                </div>
+                <div className="text-center md:max-w-[40%] md:text-left">
+                    <h2 className="text-2xl font-bold mb-4 md:text-4xl">
+                        About a <span className="text-alc-primary">cat</span>
+                    </h2>
+                    <p>
+                    An allocat is not your typical feline lounging in the sun. This sleek and skilled creature is a seasoned expert, drawing on years of experience. Allocats are the go-to pros on allocatr, springing into action faster than you can say "catnap"! They're anything but lazy, unless you count the occasional victory stretch after a job well done.
+                    </p>
+
+                    <div className="flex flex-col text-center mt-12 md:flex-row md:items-start md:text-left">
+                        <img src={logoIcon} alt="allocatr icon" width={60} className="mx-auto p-2 md:mx-0"/>
+                        <span>
+                            <h3 className="font-bold">Looking to offer your skills?</h3>
+                            <p className="text-sm">Join our team of allocats</p>
+                            <Button className="mt-4" variant={'green'}>Become an allocate</Button>                            
+                        </span>                        
+                    </div>                    
+                </div>            
+            </div>
+            <div className="mt-16">
+                <Heading 
+                    defaultText="I can't think of a title for the header right now"
+                    accentText=" but I’ll think of something"
+                />
+                <p className="text-alc-gray text-center font-light lg:text-2xl py-4">
+                    Connect with experts who bring expertise, agility, and results to every task
+                </p>
+                <span className="flex flex-col items-center justify-center gap-6 py-12 sm:flex-row">
+                    <InfoCard
+                        header="Lorem ipsum dolor"
+                        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+                    />
+                    <InfoCard
+                        header="Lorem ipsum dolor"
+                        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+                    />
+                    <InfoCard
+                        header="Lorem ipsum dolor"
+                        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+                    />
+                </span>
+            </div>
+            <div className="mt-16">
+                <Heading 
+                    defaultText="Manage projects"
+                    accentText=" seamlessly"
+                />
+                <p className="text-alc-gray text-center font-light lg:text-2xl py-4">
+                    Connect with experts who bring expertise, agility, and results to every task
+                </p>
+            </div>
+        </div>
+    );
+};
+
+export default HomePage;

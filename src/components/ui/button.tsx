@@ -17,6 +17,8 @@ const buttonVariants = cva(
           "border border-alc-light-gray text-alc-light-gray bg-transparent hover:border-alc-light-gray/80 hover:text-alc-light-gray/80 animate-colors duration-200",
         secondary:
           "bg-alc-secondary text-secondary-foreground hover:bg-alc-secondary/80 animate-colors duration-200",
+        green:
+          "bg-alc-green text-primary-foreground hover:bg-alc-green/80 animate-colors duration-200",
         ghost: "hover:bg-accent hover:text-accent-foreground animate-colors duration-200",
         link: "text-primary underline-offset-4 hover:underline animate-colors duration-200",
       },

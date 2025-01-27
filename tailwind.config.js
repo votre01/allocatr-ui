@@ -10,14 +10,13 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
-			'alc-primary': '#033d4f',
-			'alc-secondary': '#deda00',
-			'alc-sky-blue': '#00b1ea',
-			'alc-gray': '#474e51',
-			'alc-light-gray': '#d1d1d1',
-			'alc-green': '#38d200',			
-			'alc-red': '#ad3a12',
-							
+  			'alc-primary': '#033d4f',
+  			'alc-secondary': '#deda00',
+  			'alc-sky-blue': '#00b1ea',
+  			'alc-gray': '#474e51',
+  			'alc-light-gray': '#d1d1d1',
+  			'alc-green': '#38d200',
+  			'alc-red': '#ad3a12',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -58,6 +57,28 @@ module.exports = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
   		}
   	}
   },
