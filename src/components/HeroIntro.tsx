@@ -14,22 +14,20 @@ const HeroIntro = () => {
                 <p className="text-alc-gray text-center font-light lg:text-2xl py-4">
                     Connect with experts who bring expertise, agility, and results to every task
                 </p>
-                <Button variant="outline" className="px-24 py-6 mt-4 md:mt-12 text-alc-primary border-alc-primary focus:outline-none ">
+                <Button variant="outline" className="px-24 py-6 mt-4 md:mt-12 text-alc-primary border-alc-primary focus:outline-none">
                     Get started
                 </Button>
-                <span className="py-12">
-                    <CalloutCard
-                        logoIcon={logoIcon}
-                        subHeader="Lost time is so last season"
-                        cardHeader="
-                            We line up skilled pros so fast you'll think time's on your side
-                        "
-                        cardImage={computer}
-                        description="Allocatr connects you with skilled experts and professionals for tasks of any size."
-                        btnTitle="Post a project"
-                        btnColor="alc-secondary"                    
-                    />
-                </span>
+                <CalloutCard className="my-12"
+                    logoIcon={logoIcon}
+                    subHeader="Lost time is so last season"
+                    cardHeader="
+                        We line up skilled pros so fast you'll think time's on your side
+                    "
+                    cardImage={computer}
+                    description="Allocatr connects you with skilled experts and professionals for tasks of any size."
+                    btnTitle="Post a project"
+                    btnColor="alc-secondary"                    
+                />
             </div>
         </div>
     );

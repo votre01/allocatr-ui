@@ -8,12 +8,13 @@ type Props = {
     cardImage: string,
     description: string,
     btnTitle: string,
-    btnColor: string
+    btnColor: string,
+    className?: string
 }
 
-const CalloutCard = ({ logoIcon, subHeader, cardHeader, cardImage, description, btnTitle, btnColor }: Props) => {
+const CalloutCard = ({ logoIcon, subHeader, cardHeader, cardImage, description, btnTitle, btnColor, className }: Props) => {
     return (
-        <div className="flex bg-alc-primary p-8 items-center rounded-3xl sm:justify-between sm:px-12 sm:py-16">
+        <div className={`flex bg-alc-primary p-8 items-center rounded-3xl sm:justify-between sm:px-12 sm:py-16 sm:max-w-6xl ${className}`}>
             <div className="  text-white text-center sm:text-left">
                 <span className=" flex flex-col items-center sm:flex-row sm:text-left">
                     <img src={logoIcon} alt="Allocatr icon" className="w-16 px-2 sm:w-20"/>

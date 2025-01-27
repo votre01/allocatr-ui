@@ -1,8 +1,10 @@
 import HomeAccordion from "@/components/HomeAccordion";
 import logoIcon from "@/assets/icon-variant-01.svg";
+import computerImage from "@/assets/laptop-and-phone.svg"
 import { Button } from "@/components/ui/button";
 import Heading from "@/components/Heading";
 import InfoCard from "@/components/InfoCard";
+import CalloutCard from "@/components/CalloutCard";
 
 const HomePage = () => {
     return (
@@ -52,7 +54,7 @@ const HomePage = () => {
                     />
                 </span>
             </div>
-            <div className="mt-16">
+            <div className="mt-16 ">
                 <Heading 
                     defaultText="Manage projects"
                     accentText=" seamlessly"
@@ -60,6 +62,15 @@ const HomePage = () => {
                 <p className="text-alc-gray text-center font-light lg:text-2xl py-4">
                     Connect with experts who bring expertise, agility, and results to every task
                 </p>
+                <CalloutCard className="my-12 mx-auto"
+                    logoIcon={logoIcon}
+                    subHeader="Project management tools"
+                    cardHeader="Powerful tools to simplify your project management"
+                    cardImage={computerImage}
+                    description="Seamless collaboration and streamlined workflows ensure everything stays organized."
+                    btnTitle="Learn more"
+                    btnColor="alc-sky-blue"
+                />                  
             </div>
         </div>
     );
