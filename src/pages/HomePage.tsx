@@ -70,7 +70,7 @@ const HomePage = () => {
                     cardImage={computerImage}
                     description="Seamless collaboration and streamlined workflows ensure everything stays organized."
                     btnTitle="Learn more"
-                    btnColor="alc-secondary" 
+                    btnColor="red" 
                 />                  
             </div>
             <div className="my-16 px-4">
