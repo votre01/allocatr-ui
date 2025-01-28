@@ -10,9 +10,9 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
-  			'alc-primary': '#033d4f',
-  			'alc-secondary': '#deda00',
-  			'alc-sky-blue': '#00b1ea',
+  			'alc-primary': '#033d4f',			
+  			'alc-secondary': '#deda00',  
+			'alc-sky-blue': '#00b1ea',			
   			'alc-gray': '#474e51',
   			'alc-light-gray': '#d1d1d1',
   			'alc-green': '#38d200',

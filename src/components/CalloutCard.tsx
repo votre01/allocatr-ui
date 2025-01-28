@@ -1,4 +1,3 @@
-// import logoIcon from "@/assets/icon-variant-01.svg";
 import { Button } from "./ui/button";
 
 type Props = {
@@ -31,5 +30,7 @@ const CalloutCard = ({ logoIcon, subHeader, cardHeader, cardImage, description, 
         </div>
     );
 };
+
+// border-alc-sky-blue
 
 export default CalloutCard;

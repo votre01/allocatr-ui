@@ -4,7 +4,8 @@ import computerImage from "@/assets/laptop-and-phone.svg"
 import { Button } from "@/components/ui/button";
 import Heading from "@/components/Heading";
 import InfoCard from "@/components/InfoCard";
-import CalloutCard from "@/components/CalloutCard";
+import CalloutCard  from "@/components/CalloutCard";
+import GridCollage from "@/components/GridCollage";
 
 const HomePage = () => {
     return (
@@ -69,8 +70,19 @@ const HomePage = () => {
                     cardImage={computerImage}
                     description="Seamless collaboration and streamlined workflows ensure everything stays organized."
                     btnTitle="Learn more"
-                    btnColor="alc-sky-blue"
+                    btnColor="alc-secondary" 
                 />                  
+            </div>
+            <div className="my-16 px-4">
+                <h3 className="text-2xl font-bold md:text-4xl py-6">
+                    No job is too small or too big
+                </h3>
+                <p className="max-w-[80%] text-sm md:max-w-[60%] md:text-lg">
+                Whether its a quick fix or a major project, every task matters. From simple jobs to complex endeavors, allocatr is the right place to connect with skilled professionals.
+                </p>
+                <span>
+                    <GridCollage />    
+                </span>                
             </div>
         </div>
     );
