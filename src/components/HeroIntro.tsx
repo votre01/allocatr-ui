@@ -25,8 +25,7 @@ const HeroIntro = () => {
                     "
                     cardImage={computer}
                     description="Allocatr connects you with skilled experts and professionals for tasks of any size."
-                    btnTitle="Post a project"
-                    btnColor="alc-secondary"                    
+                    btnTitle="Post a project"                  
                 />
             </div>
         </div>

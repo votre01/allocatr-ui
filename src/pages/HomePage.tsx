@@ -27,7 +27,7 @@ const HomePage = () => {
                         <span>
                             <h3 className="font-bold">Looking to offer your skills?</h3>
                             <p className="text-sm">Join our team of allocats</p>
-                            <Button className="mt-4" variant={'green'}>Become an allocate</Button>                            
+                            <Button className="mt-4 focus:outline-none focus:ring-0" variant={'green'}>Become an allocate</Button>                            
                         </span>                        
                     </div>                    
                 </div>            
@@ -70,19 +70,38 @@ const HomePage = () => {
                     cardImage={computerImage}
                     description="Seamless collaboration and streamlined workflows ensure everything stays organized."
                     btnTitle="Learn more"
-                    btnColor="red" 
                 />                  
             </div>
             <div className="my-16 px-4">
                 <h3 className="text-2xl font-bold md:text-4xl py-6">
                     No job is too small or too big
                 </h3>
-                <p className="max-w-[80%] text-sm md:max-w-[60%] md:text-lg">
+                <p className="max-w-[80%] text-sm mb-12 md:max-w-[60%] md:text-lg">
                 Whether its a quick fix or a major project, every task matters. From simple jobs to complex endeavors, allocatr is the right place to connect with skilled professionals.
                 </p>
-                <span>
+                <span className="mt-12">
                     <GridCollage />    
                 </span>                
+            </div>
+            <div className="my-16 px-4">
+                <Heading
+                    defaultText="A.I Team Builder - "
+                    accentText="Assemble and manage with ease"
+                />
+                <p className="text-alc-gray text-center font-light lg:text-2xl py-4">
+                    Connect with experts who bring expertise, agility, and results to every task
+                </p>
+                <div className="flex flex-col gap-12 mt-6 text-sm md:justify-center md:items-center md:flex-row">                
+                    <div className="text-center md:max-w-[40%] md:text-left">
+                        <p>
+                        Use allocatrs A.I Team Builder to pick skilled allocats for every aspect of your project. Team Builder also lets you handpick your team
+                        </p>
+                        <Button className="mt-12 focus:outline-none focus:ring-0" variant={'green'}>Become an allocate</Button>                                       
+                    </div>
+                    <div className="md:max-w-[40%]">
+                        <div className="bg-alc-light-gray p-24 rounded-lg">Team builder graphis here</div>
+                    </div>            
+                </div>                
             </div>
         </div>
     );

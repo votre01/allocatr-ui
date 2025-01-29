@@ -16,7 +16,7 @@ const buttonVariants = cva(
         outline:
           "border border-alc-light-gray text-alc-light-gray bg-transparent hover:border-alc-light-gray/80 hover:text-alc-light-gray/80 animate-colors duration-200",
         secondary:
-          "bg-alc-secondary text-secondary-foreground hover:bg-alc-secondary/80 animate-colors duration-200",
+          "bg-alc-secondary text-secondary-foreground focus:ouline-none focus:ring-0 hover:bg-alc-secondary/80 animate-colors duration-200",
         green:
           "bg-alc-green text-primary-foreground hover:bg-alc-green/80 animate-colors duration-200",
         ghost: "hover:bg-accent hover:text-accent-foreground animate-colors duration-200",
