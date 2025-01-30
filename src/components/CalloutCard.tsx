@@ -30,6 +30,4 @@ const CalloutCard = ({ logoIcon, subHeader, cardHeader, cardImage, description, 
     );
 };
 
-// border-alc-sky-blue
-
 export default CalloutCard;

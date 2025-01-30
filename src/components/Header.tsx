@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Logo from "@/assets/allocatr-neg-light.svg"
 import MobileNav from "./MobileNav";
 import MainNav from "./MainNav";
-import { Button } from "./ui/button";
+import MainNavLink from "./MainNavLink";
 
 
 const Header = () => {
@@ -15,7 +15,7 @@ const Header = () => {
                     </Link>
                     {/* Mobile Nav */}
                     <div className="lg:hidden flex items-center">
-                        <Button className="mx-1"variant={"primary"}>Log in</Button>
+                        <MainNavLink link={"/"} title={"Log in"} />
                         <MobileNav />            
                     </div>
                     {/* Main Nav */}
