@@ -1,15 +1,15 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import GoogleIcon from "@/assets/google.svg"
-import Logo from "@/assets/allocatr-neg-dark.svg"
+import Logo from "@/assets/allocatr-dark.svg"
 import { Link } from "react-router-dom";
 
 
 const Login = () => {
     return (
-        <section className="flex flex-col h-screen justify-center space-y-4 text-alc-gray px-8">
-                <img src={Logo} alt="allocatr" width={82} className="mx-auto py-6 hover:text-white sm:mx-0 sm:mb-16" />
-                <span className="space-y-1 text-center sm:text-left">
+        <section className="flex flex-col h-screen mx-auto max-w-md justify-center space-y-4 text-alc-gray px-8 lg:mx-0">
+                <img src={Logo} alt="allocatr" width={82} className="mx-auto py-2 hover:text-white lg:mx-0 lg:mb-12" />
+                <span className="space-y-1 text-center lg:text-left">
                     <h1 className="font-bold text-xl text-alc-primary">Log in to allocatr</h1>
                     <legend>
                         Don't have an account?
@@ -31,9 +31,11 @@ const Login = () => {
                     <Input placeholder="Email address" />
                     <Input type="password" placeholder="Password" />
                 </form>
-                <Button variant="primary">
-                    Login
-                </Button>
+                <span>
+                    <Button variant="primary" className="w-full lg:w-[90px]">
+                        Login
+                    </Button>
+                </span>
         </section>
     );
 };
