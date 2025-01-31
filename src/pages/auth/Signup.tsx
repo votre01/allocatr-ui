@@ -2,7 +2,9 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import GoogleIcon from "@/assets/google.svg"
 import Logo from "@/assets/allocatr-dark.svg"
+import Info from "@/assets/circle-info-solid.svg"
 import { Link } from "react-router-dom";
+import Checkbox from "@/components/Checkbox";
 
 
 const Signup = () => {
@@ -20,41 +22,31 @@ const Signup = () => {
                     </legend>
                 </span>
                 <span className="space-y-1">
-                    <Button variant="outline" className="w-full border-alc-gray/80 text-alc-gray/80 hover:border-alc-gray/60 hover:text-alc-gray/60">
+                    <Button variant="outline" className="w-full border-alc-gray/80 text-alc-gray/80 hover:border-alc-gray/60 hover:text-alc-gray/60 focus:outline-none">
                         <img src={GoogleIcon} width={20} /> Continue with Google
                     </Button>
-                    <legend>
+                    <legend className="text-sm text-alc-gray/60">
                         Or with email and password
                     </legend>
                 </span>            
-                <form className="space-y-4 py-6">
-                    <Input placeholder="Email address" />
-                    <Input placeholder="First name" />
-                    <Input placeholder="Last name" />
-                    <Input type="password" placeholder="Password" />                    
-                    <div className="flex flex-col space-x-2">
-                        <span className="flex items-center space-x-2">
-                            <Input id="hireAccount" type="checkbox" className="border border-2 rounded-lg w-5" />
-                            <label
-                                htmlFor="hireAccount"
-                                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                            >
-                                I'm here to work
-                            </label>
-                        </span>
-                        <span className="flex items-center space-x-2">
-                            <Input id="workAccount" type="checkbox" className="border border-2 rounded-lg w-5" />
-                            <label
-                                htmlFor="workAccount"
-                                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                            >
-                                I'm here to hire
-                            </label>
-                        </span>
-                    </div>                              
+                <form >
+                    <fieldset className="space-y-4 py-2">
+                        <Input placeholder="Email address" />
+                        <Input placeholder="First name" />
+                        <Input placeholder="Last name" />
+                        <Input type="password" placeholder="Password" />
+                    </fieldset>
+                    <fieldset className="space-y-0.4 mb-4">
+                        <legend className="flex space-x-2 items-center text-[.8rem] py-2 font-bold">
+                            <span>Select role</span>
+                            <img src={Info} width={12} />
+                        </legend>
+                        <Checkbox id="account-type-work" labelText="I'm here to work" />                                
+                        <Checkbox id="account-type-hire" labelText="I'm here to hire" />
+                    </fieldset>                                  
                 </form>
                 <span>
-                    <Button variant="primary" className="w-full lg:w-[90px]">
+                    <Button variant="primary" className="w-full lg:w-[90px] focus:outline-none">
                         Sign up
                     </Button>
                 </span>

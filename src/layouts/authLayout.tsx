@@ -11,4 +11,4 @@ const AuthLayout = ({ children }:Props) => {
     );
 };
 
-export default AuthLayout
+export default AuthLayout;

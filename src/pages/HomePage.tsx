@@ -1,5 +1,6 @@
 import HomeAccordion from "@/components/HomeAccordion";
 import logoIcon from "@/assets/icon-variant-01.svg";
+import logoIcon2 from "@/assets/icon-variant-02.svg";
 import computerImage from "@/assets/laptop-and-phone.svg"
 import { Button } from "@/components/ui/button";
 import Heading from "@/components/Heading";
@@ -24,7 +25,7 @@ const HomePage = () => {
                         </p>
 
                         <div className="flex flex-col text-center mt-12 md:flex-row md:items-start md:text-left">
-                            <img src={logoIcon} alt="allocatr icon" width={60} className="mx-auto p-2 md:mx-0"/>
+                            <img src={logoIcon2} alt="allocatr icon" width={60} className="mx-auto px-2 md:mx-0"/>
                             <span>
                                 <h3 className="font-bold">Looking to offer your skills?</h3>
                                 <p className="text-sm">Join our team of allocats</p>
@@ -71,7 +72,7 @@ const HomePage = () => {
                         accentText=" seamlessly"
                     />
                     <p className="text-alc-gray text-center font-light lg:text-2xl py-4">
-                        Connect with experts who bring expertise, agility, and results to every task
+                    Plan, assign, and track tasks effortlessly while keeping your team connected and your projects on schedule.
                     </p>
                     <CalloutCard className="my-12 mx-auto"
                         logoIcon={logoIcon}
@@ -85,16 +86,16 @@ const HomePage = () => {
                 
                 <div className="my-16 px-4">
                     <Heading
-                        defaultText="A.I Team Builder - "
+                        defaultText="Team Builder - "
                         accentText="Assemble and manage with ease"
                     />
                     <p className="text-alc-gray text-center font-light lg:text-2xl py-4">
-                        Connect with experts who bring expertise, agility, and results to every task
+                        Big projects need the right team, and allocatr’s Team Builder makes it simple.
                     </p>
                     <div className="flex flex-col gap-12 mt-6 text-sm md:justify-center md:items-center md:flex-row">                
                         <div className="text-center md:max-w-[40%] md:text-left">
                             <p>
-                            Use allocatrs A.I Team Builder to pick skilled allocats for every aspect of your project. Team Builder also lets you handpick your team
+                            Use allocatr's Team Builder to pick skilled allocats for every aspect of your project. Team Builder also lets you handpick your team
                             </p>
                             <Button className="mt-12 focus:outline-none focus:ring-0" variant={'green'}>Become an allocate</Button>                                       
                         </div>

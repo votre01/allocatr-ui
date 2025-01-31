@@ -4,7 +4,6 @@ import GoogleIcon from "@/assets/google.svg"
 import Logo from "@/assets/allocatr-dark.svg"
 import { Link } from "react-router-dom";
 
-
 const Login = () => {
     return (
         <section className="flex flex-col h-screen mx-auto max-w-md justify-center space-y-4 text-alc-gray px-8 lg:mx-0">

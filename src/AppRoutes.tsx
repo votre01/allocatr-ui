@@ -2,8 +2,8 @@ import Layout from "./layouts/layout";
 import AuthLayout from "./layouts/authLayout"
 import { Routes, Route, Navigate}  from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import Login from "./pages/auth/Login";
-import Signup from "./pages/auth/Signup";
+import Login from "./pages/auth/login";
+import Signup from "./pages/auth/signup";
 
 const AppRoutes = () => {
     return (
