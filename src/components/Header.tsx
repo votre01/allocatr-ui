@@ -3,9 +3,11 @@ import Logo from "@/assets/allocatr-neg-light.svg"
 import MobileNav from "./MobileNav";
 import MainNav from "./MainNav";
 import MainNavLink from "./MainNavLink";
+import { UserCircle } from "lucide-react";
+import { User } from "@/types/user";
 
 
-const Header = () => {
+const Header = ({ user }:User) => {
     return (
         <div className="sticky top-0">
             <div className="bg-black py-4">
@@ -15,7 +17,16 @@ const Header = () => {
                     </Link>
                     {/* Mobile Nav */}
                     <div className="lg:hidden flex items-center">
-                        <MainNavLink link={"/"} title={"Log in"} />
+                        {
+                            user ? (
+                                <span className="flex items-center text-white">
+                                    <UserCircle className="mx-2" />
+                                    Trevor
+                                </span>                                
+                            ) : (
+                                <MainNavLink link={"/"} title={"Log in"} />
+                            )
+                        }
                         <MobileNav />            
                     </div>
                     {/* Main Nav */}
