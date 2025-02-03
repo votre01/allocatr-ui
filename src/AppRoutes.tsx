@@ -5,10 +5,36 @@ import HomePage from "./pages/HomePage";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import { useEffect, useState } from "react";
 
 const AppRoutes = () => {
 
-    const user = true;
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const getUser = () => {
+            fetch("http://localhost:5500/auth/login/success", {
+                method: "GET",
+                credentials: "include",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Credentials": "true",
+                },
+            }).then(response => {
+                if (response.status ===200)
+                    return response.json();
+                    throw new Error("Authentication failed");
+            }).then(resObject => {
+                setUser(resObject.user)
+            }).catch (err => {
+                console.log(err);
+            });
+        };
+        getUser();
+    }, []);
+
+    console.log(user);
     
     return (
         <Routes>
@@ -20,10 +46,16 @@ const AppRoutes = () => {
             <Route path="/signup" element={<AuthLayout><Signup /></AuthLayout> } />
             <Route
                 path="/dashboard"
-                element={<ProtectedRoute user={user}><span>DASHBOARD</span></ProtectedRoute>} />
+                element={<ProtectedRoute user={user}><span>DASHBOARD</span></ProtectedRoute>}
+            />
+            {/* <Route
+                path="/profile"
+                element={<ProtectedRoute user={user}><span>PROFILE PAGE</span> </ProtectedRoute>}
+            /> */}
             <Route
                 path="/profile"
-                element={<ProtectedRoute user={user}><span>PROFILE PAGE</span> </ProtectedRoute>} />
+                element={<ProtectedRoute user={user}><span>PROFILE PAGE</span></ProtectedRoute>}
+            />
             <Route path="*" element={<Navigate to="/" />} /> {/* Replace with 404 not found page route*/}
         </Routes>
     );

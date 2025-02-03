@@ -5,6 +5,9 @@ import Logo from "@/assets/allocatr-dark.svg"
 import { Link } from "react-router-dom";
 
 const Login = () => {
+    const google = () => {
+        window.open("http://localhost:5500/auth/google", "_self");
+    }
     return (
         <section className="flex flex-col h-screen mx-auto max-w-md justify-center space-y-4 text-alc-gray px-8 lg:mx-0">
                 <img src={Logo} alt="allocatr" width={82} className="mx-auto py-2 hover:text-white lg:mx-0 lg:mb-12" />
@@ -19,7 +22,11 @@ const Login = () => {
                     </legend>
                 </span>
                 <span className="space-y-1">
-                    <Button variant="outline" className="w-full border-alc-gray/80 text-alc-gray/80 hover:border-alc-gray/60 hover:text-alc-gray/60">
+                    <Button 
+                        variant="outline"
+                        className="w-full border-alc-gray/80 text-alc-gray/80 hover:border-alc-gray/60 hover:text-alc-gray/60"
+                        onClick={google}
+                    >
                         <img src={GoogleIcon} width={20} /> Continue with Google
                     </Button>
                     <legend>

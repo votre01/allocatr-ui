@@ -1,8 +1,9 @@
 import Header from "@/components/Header";
 import HeroIntro from "@/components/HeroIntro";
+import { User } from "@/types/user";
 
 type Props = {
-    user: boolean
+    user: User
     children: React.ReactNode,
 }
 
