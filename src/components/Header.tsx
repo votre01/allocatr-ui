@@ -5,11 +5,12 @@ import MainNav from "./MainNav";
 import MainNavLink from "./MainNavLink";
 import NavIcons from "./NavIcons";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Button } from "./ui/button";
 
 
 
 const Header = () => {
-    const { isAuthenticated } = useAuth0();
+    const { loginWithRedirect, isAuthenticated } = useAuth0();
     return (
         <div className="sticky top-0">
             <div className="bg-black py-4">
@@ -18,15 +19,24 @@ const Header = () => {
                         <img src={Logo} alt="" width={120} />
                     </Link>
                     {/* Mobile Nav */}
-                    <div className="lg:hidden flex items-center">
+                    <div className="lg:hidden">
                         {
                             isAuthenticated ? (
                                 <NavIcons/>                                
                             ) : (
-                                <MainNavLink link={"/"} title={"Log in"} />
+                                <span className="flex items-center">
+                                    <Button
+                                        variant={"link"}
+                                        className="mx-1 text-alc-light-gray bg-transparent focus:outline-none no-underline"
+                                        onClick={ async () => await loginWithRedirect() }    
+                                    >
+                                        Log in
+                                    </Button>
+                                    <MobileNav />
+                                </span>
                             )
                         }
-                        <MobileNav />            
+                                    
                     </div>
                     {/* Main Nav */}
                     <div className="hidden lg:block">                    

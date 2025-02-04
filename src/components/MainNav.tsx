@@ -8,29 +8,31 @@ const MainNav = () => {
     const { loginWithRedirect, isAuthenticated } = useAuth0();
 
     return (
-        <span className="flex items-center">
-            <MainNavLink link={"/"} title={"Explore"} />
-            <MainNavLink link={"/"} title={"Post a task"} />
-            <MainNavLink link={"/"} title={"Become an allocat"} />
-            <SearchBar placeholderText="Find a pro..."/>
+        <>            
             {isAuthenticated ? (
                 <NavIcons />
             ) : (
-                <span>
-                    {/* <MainNavLink link={"/"} title={"Log in"} /> */}
+                <span className="flex items-center">
+                    <MainNavLink link={"/"} title={"Explore"} />
+                    <MainNavLink link={"/"} title={"Post a task"} />
+                    <MainNavLink link={"/"} title={"Become an allocat"} />
+                    <SearchBar placeholderText="Find a pro..."/>
                     <Button
                         variant={"link"}
                         className="mx-1 text-alc-light-gray bg-transparent focus:outline-none no-underline"
                         onClick={ async () => await loginWithRedirect() }    
-                    >Log in</Button>
+                    >
+                        Log in
+                    </Button>
                     <Button
                         variant={"outline"}
-                        className="mx-1"
-                        onClick={ async () => await loginWithRedirect() }    
-                    >Sign up</Button>
+                        className="mx-1"  
+                    >
+                        Sign up
+                    </Button>
                 </span>
             )}
-        </span>
+        </>
     );
 };
 

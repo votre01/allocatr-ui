@@ -11,7 +11,7 @@ const AppRoutes = () => {
             <Route path="/" element={<Layout><HomePage /></Layout>} />  
             <Route path="/login" element={<AuthLayout><Login /></AuthLayout>} />
             <Route path="/signup" element={<AuthLayout><Signup /></AuthLayout> } />
-            <Route path="/dashboard" element=<span>DASHBOARD</span> />
+            <Route path="/dashboard" element={<span>DASHBOARD</span>} />
             <Route path="/profile" element=<span>PROFILE PAGE</span> />
             <Route path="*" element={<Navigate to="/" />} /> {/* Replace with 404 not found page route*/}
         </Routes>

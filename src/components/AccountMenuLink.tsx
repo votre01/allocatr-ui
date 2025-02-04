@@ -1,3 +1,4 @@
+import { DotIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 type Props = {
@@ -10,7 +11,7 @@ const AccountMenuLink = ({ link, title, className }: Props) => {
     return (
         <Link
             to={link}
-            className={`font-normal text-black hover:text-alc-gray text-nowrap transition-colors duration-200, className ${className}`} 
+            className={`font-normal text-black hover:text-alc-gray text-nowrap transition-colors duration-200, ${className}`} 
         >
             {title}
         </Link>
