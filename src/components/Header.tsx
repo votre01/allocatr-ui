@@ -3,15 +3,13 @@ import Logo from "@/assets/allocatr-neg-light.svg"
 import MobileNav from "./MobileNav";
 import MainNav from "./MainNav";
 import MainNavLink from "./MainNavLink";
-import { User } from "@/types/user";
 import NavIcons from "./NavIcons";
-
-type Props = {
-    user: User
-}
+import { useAuth0 } from "@auth0/auth0-react";
 
 
-const Header = ({ user }: Props) => {
+
+const Header = () => {
+    const { isAuthenticated } = useAuth0();
     return (
         <div className="sticky top-0">
             <div className="bg-black py-4">
@@ -22,7 +20,7 @@ const Header = ({ user }: Props) => {
                     {/* Mobile Nav */}
                     <div className="lg:hidden flex items-center">
                         {
-                            user ? (
+                            isAuthenticated ? (
                                 <NavIcons/>                                
                             ) : (
                                 <MainNavLink link={"/"} title={"Log in"} />
@@ -32,7 +30,7 @@ const Header = ({ user }: Props) => {
                     </div>
                     {/* Main Nav */}
                     <div className="hidden lg:block">                    
-                        <MainNav user={user} />                
+                        <MainNav />                
                     </div>            
                 </div>            
             </div>

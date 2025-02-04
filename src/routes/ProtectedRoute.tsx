@@ -1,13 +1,15 @@
-import { User } from "@/types/user";
+import { useAuth0 } from "@auth0/auth0-react";
 import { Navigate } from "react-router-dom";
 
+
+
 type Props = {
-    user: User,
     children: React.ReactNode
 }
 
-const ProtectedRoutes = ({ user, children }:Props) => {
-    return user ? children : <Navigate to="/login" />;
+const ProtectedRoutes = ({ children }:Props) => {
+    const { isAuthenticated } = useAuth0();
+    return isAuthenticated ? children : <Navigate to="/login" />;
 };
 
 export default ProtectedRoutes;

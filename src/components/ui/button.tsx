@@ -19,8 +19,12 @@ const buttonVariants = cva(
           "bg-alc-secondary text-secondary-foreground focus:ouline-none focus:ring-0 hover:bg-alc-secondary/80 animate-colors duration-200",
         green:
           "bg-alc-green text-primary-foreground hover:bg-alc-green/80 animate-colors duration-200",
-        ghost: "hover:bg-accent hover:text-accent-foreground animate-colors duration-200",
-        link: "text-primary underline-offset-4 hover:underline animate-colors duration-200",
+        red:
+          "bg-alc-red text-primary-foreground hover:bg-alc-red/80 animate-colors duration-200",
+        ghost: 
+          "hover:bg-accent hover:text-accent-foreground animate-colors duration-200",
+        link:
+          "text-primary underline-offset-4 hover:underline animate-colors duration-200",
       },
       size: {
         default: "h-10 px-4 py-2",
