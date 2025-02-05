@@ -1,4 +1,3 @@
-import { DotIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 type Props = {
