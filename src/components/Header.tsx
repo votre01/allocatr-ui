@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import Logo from "@/assets/allocatr-neg-light.svg"
 import MobileNav from "./MobileNav";
 import MainNav from "./MainNav";
-import MainNavLink from "./MainNavLink";
 import NavIcons from "./NavIcons";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Button } from "./ui/button";
