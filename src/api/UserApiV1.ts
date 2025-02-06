@@ -2,14 +2,14 @@ import { useMutation } from "react-query";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-type CreateUserRequest = {
-    auth0Id: string;
+type CreateUserRequest = {    
     email: string;
+    auth0Id: string;
 };
 
 export const useCreateV1User = () => {
     const createV1UserRequest = async (user: CreateUserRequest) => {
-        const response = await fetch(`${API_BASE_URL}/api/v1/user`, {
+        const response = await fetch(`${API_BASE_URL}/api/v1/users/auth`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"            
