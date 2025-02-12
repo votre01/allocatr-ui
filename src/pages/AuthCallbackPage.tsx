@@ -12,7 +12,7 @@ const AuthCallbackPage = () => {
 
     useEffect(() => {
         if (user?.sub, user?.email && !hasCreatedUser.current) {
-            createUser({ email:user.email, auth0Id:String(user.sub) });
+            createUser({ email:String(user?.email), auth0Id:String(user?.sub) });
             hasCreatedUser.current = true;
         }
         navigate("/");
