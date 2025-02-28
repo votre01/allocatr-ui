@@ -5,12 +5,14 @@ import HomePage from "./pages/HomePage";
 import AuthCallbackPage from "./pages/AuthCallbackPage";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
+import UserProfileSetupForm from "./forms/user-profile-setup-form/UserProfileSetupForm";
 
 const AppRoutes = () => {    
     return (
         <Routes>
             <Route path="/" element={<Layout><HomePage /></Layout>} />
-            <Route path="/auth-callback" element={<AuthCallbackPage />} />  
+            <Route path="/auth-callback" element={<AuthCallbackPage />} />
+            <Route path="/profile/setup" element={<UserProfileSetupForm />} />
             <Route path="/login" element={<AuthLayout><Login /></AuthLayout>} />
             <Route path="/signup" element={<AuthLayout><Signup /></AuthLayout> } />
             <Route path="/dashboard" element={<span>DASHBOARD</span>} />
