@@ -2,8 +2,9 @@ import { useState } from "react";
 import ProfileInfo from "./ProfileInfo";
 import Accreditation from "./Accreditation";
 import LocationSetup from "./LocationSetup";
-import Logo from "@/assets/allocatr-light.svg";
+import Logo from "@/assets/allocatr-dark.svg";
 import AllocatrIcon from "@/assets/icon-variant-01.svg";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const steps = ["Profile Info", "Accreditation", "Location"];
 
@@ -13,9 +14,11 @@ const ProfileSetup = () => {
   const nextStep = () => setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1));
   const prevStep = () => setCurrentStep((prev) => Math.max(prev - 1, 0));
 
+  const { user } = useAuth0();
+
   return (
-    <div className="h-screen py-[4%] bg-gradient-to-r from-alc-primary to-alc-red">
-    {/* <div className="h-screen py-[4%] bg-alc-primary"> */}
+    // <div className="h-screen py-[4%] bg-gradient-to-r from-alc-primary to-alc-red">
+    <div className="h-screen py-[4%] bg-alc-light-gray/20">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between py-4">
           <span className="flex items-center">
@@ -24,9 +27,9 @@ const ProfileSetup = () => {
               alt="allocatr" width={80}
               className="p-2"
             />
-            <span className="text-alc-light-gray">
+            <span className="text-alc-gray">
               <h1 className="font-bold text-xl">
-                Welcome {"Username"}
+                Welcome {user?.given_name}
               </h1>
               <span className="text-sm">
                 Let's quickly setup your profile
@@ -41,12 +44,12 @@ const ProfileSetup = () => {
           />
 
         </div>
-        <div className="p-6 border border-alc-light-gray/20 rounded-lg shadow-lg bg-alc-light-gray/40">
+        <div className="p-6 rounded-lg shadow-lg bg-alc-primary">
           {/* Step Indicator */}
           <div className="flex items-center justify-between mb-6">
             {steps.map((step, index) => (
               <div key={index} className={`flex-1 text-center py-2 
-                ${index <= currentStep ? "bg-alc-sky-blue text-white font-bold" : "bg-alc-gray/80 text-white opacity-50"}`}>
+                ${index <= currentStep ? "bg-alc-sky-blue text-white font-bold" : "bg-alc-light-gray text-alc-gray"}`}>
                 {step}
               </div>
             ))}
@@ -61,14 +64,14 @@ const ProfileSetup = () => {
           <div className="flex justify-between mt-6">
             <button
               onClick={prevStep}
-              className="px-4 py-2 bg-gray-500 text-white rounded disabled:opacity-50"
+              className="px-4 py-2 bg-alc-gray text-white rounded disabled:opacity-50"
               disabled={currentStep === 0}
             >
               Back
             </button>
             <button
               onClick={nextStep}
-              className="px-4 py-2 bg-alc-green text-white rounded"
+              className="px-4 py-2 bg-alc-secondary text-alc-primary rounded"
             >
               {currentStep === steps.length - 1 ? "Finish" : "Save & Continue"}
             </button>
