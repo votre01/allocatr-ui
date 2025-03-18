@@ -1,4 +1,7 @@
+import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Form } from "@/components/ui/form";
 
 const formSchema = z.object({
     first_name: z.string().min(1, "First name is required"),
@@ -18,3 +21,26 @@ const formSchema = z.object({
 });
 
 type UserFormData = z.infer<typeof formSchema>;
+
+type Props = {
+    onSave: (userProfileData: UserFormData) => void;
+    isLoading: boolean;
+}
+
+const UserProfileForm({ onSave, isLoading }: Props) => {
+    const form = useForm<UserFormData>({
+        resolver:zodResolver(formSchema),
+    });
+
+    return (
+        <Form {...form}>
+            <form
+                onSubmit={form.handleSubmit(onSave)}
+                className="space-y-4"
+            >
+
+            </form>
+
+        </Form>
+    )
+}
