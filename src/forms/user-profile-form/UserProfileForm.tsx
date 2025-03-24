@@ -3,6 +3,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import LoadingButton from "@/components/LoadingButton";
+import { Button } from "@/components/ui/button";
 
 const formSchema = z.object({
     first_name: z.string().min(1, "First name is required"),
@@ -28,7 +30,7 @@ type Props = {
     isLoading: boolean;
 }
 
-const UserProfileForm({ onSave, isLoading }: Props) => {
+const UserProfileForm = ({ onSave, isLoading}: Props) => {
     const form = useForm<UserFormData>({
         resolver:zodResolver(formSchema),
     });
@@ -45,63 +47,75 @@ const UserProfileForm({ onSave, isLoading }: Props) => {
                         View and update your profile
                     </FormDescription>
                 </div>
-                
                 <div>
-                    <FormField control={form.control} name="first_name" render={({field}) => (
-                        <FormItem>
-                            <FormLabel>First name</FormLabel>
-                            <FormControl>
-                                <Input {...field} />
-                            </FormControl>
-                        </FormItem>
-                    )}/>
-                    <FormField control={form.control} name="last_name" render={({field}) => (
-                        <FormItem>
-                            <FormLabel>Last name</FormLabel>
-                            <FormControl>
-                                <Input {...field} />
-                            </FormControl>
-                        </FormItem>
-                    )}/>
-                </div>
+                    <div>
+                        <FormField control={form.control} name="first_name" render={({field}) => (
+                            <FormItem>
+                                <FormLabel>First name</FormLabel>
+                                <FormControl>
+                                    <Input {...field} />
+                                </FormControl>
+                            </FormItem>
+                        )}/>
+                        <FormField control={form.control} name="last_name" render={({field}) => (
+                            <FormItem>
+                                <FormLabel>Last name</FormLabel>
+                                <FormControl>
+                                    <Input {...field} />
+                                </FormControl>
+                            </FormItem>
+                        )}/>
+                    </div>
 
-                <div>
-                    <FormField control={form.control} name="birth_date" render={({field}) => (
+                    <div>
+                        <FormField control={form.control} name="birth_date" render={({field}) => (
+                            <FormItem>
+                                <FormLabel>Birth date</FormLabel>
+                                <FormControl>
+                                    <Input type="date" {...field} />
+                                </FormControl>
+                            </FormItem>
+                        )}/>
+                        <FormField control={form.control} name="gender" render={({field}) => (
+                            <FormItem>
+                                <FormLabel>Gender</FormLabel>
+                                <FormControl>
+                                    <Input type="" {...field} />
+                                </FormControl>
+                            </FormItem>
+                            
+                        )}/>
+                        <FormField control={form.control} name="id_number" render={({field}) => (
+                            <FormItem>
+                                <FormLabel>ID Number</FormLabel>
+                                <FormControl>
+                                    <Input type="" {...field} />
+                                </FormControl>
+                            </FormItem>
+                            
+                        )}/>
+                    </div>
+                    <FormField control={form.control} name="phone" render={({field}) => (
                         <FormItem>
-                            <FormLabel>Birth date</FormLabel>
-                            <FormControl>
-                                <Input type="date" {...field} />
-                            </FormControl>
-                        </FormItem>
-                    )}/>
-                    <FormField control={form.control} name="gender" render={({field}) => (
-                        <FormItem>
-                            <FormLabel>Gender</FormLabel>
+                            <FormLabel>Phone</FormLabel>
                             <FormControl>
                                 <Input type="" {...field} />
                             </FormControl>
-                        </FormItem>
-                        
-                    )}/>
-                    <FormField control={form.control} name="id_number" render={({field}) => (
-                        <FormItem>
-                            <FormLabel>ID Number</FormLabel>
-                            <FormControl>
-                                <Input type="" {...field} />
-                            </FormControl>
-                        </FormItem>
-                        
+                        </FormItem>                    
                     )}/>
                 </div>
-                <FormField control={form.control} name="phone" render={({field}) => (
-                    <FormItem>
-                        <FormLabel>Phone</FormLabel>
-                        <FormControl>
-                            <Input type="" {...field} />
-                        </FormControl>
-                    </FormItem>                    
-                )}/>
+                {isLoading ? (
+                    <LoadingButton />
+                ) : (
+                    <Button
+                        type="submit"
+                    >
+                        Update
+                    </Button>
+                )}
             </form>
         </Form>
-    )
-}
+    );
+};
+
+export default UserProfileForm;

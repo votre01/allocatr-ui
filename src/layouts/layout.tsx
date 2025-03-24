@@ -1,15 +1,17 @@
 import Header from "@/components/Header";
 import HeroIntro from "@/components/HeroIntro";
+import { ShowerHead } from "lucide-react";
 
 type Props = {
-    children: React.ReactNode,
+    children: React.ReactNode;
+    showHero?: boolean;
 }
 
-const Layout = ({ children }: Props) => {    
+const Layout = ({ children, showHero=false }: Props) => {    
     return (
         <div className="flex flex-col min-h-screen">
             <Header />
-            <HeroIntro />
+            {showHero && <HeroIntro />}
             <div className=" flex-1">{children}</div>
         </div>
     );
