@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import LoadingButton from "@/components/LoadingButton";
 import { Button } from "@/components/ui/button";
@@ -39,7 +39,7 @@ const UserProfileForm = ({ onSave, isLoading}: Props) => {
         <Form {...form}>
             <form
                 onSubmit={form.handleSubmit(onSave)}
-                className="space-y-4"
+                className="flex flex-col max-w-4xl p-12 mx-auto space-y-4"
             >
                 <div>
                     <h2>Profile</h2>
@@ -47,60 +47,69 @@ const UserProfileForm = ({ onSave, isLoading}: Props) => {
                         View and update your profile
                     </FormDescription>
                 </div>
-                <div>
-                    <div>
+                <div className="space-y-4">
+                    <div className="flex gap-2 justify-between items-center">
                         <FormField control={form.control} name="first_name" render={({field}) => (
-                            <FormItem>
+                            <FormItem className="w-full">
                                 <FormLabel>First name</FormLabel>
                                 <FormControl>
-                                    <Input {...field} />
+                                    <Input {...field} className="border-alc-gray/40" />
                                 </FormControl>
+                                <FormMessage className="font-normal" />
                             </FormItem>
                         )}/>
                         <FormField control={form.control} name="last_name" render={({field}) => (
-                            <FormItem>
+                            <FormItem className="w-full">
                                 <FormLabel>Last name</FormLabel>
                                 <FormControl>
-                                    <Input {...field} />
+                                    <Input {...field} className="border-alc-gray/40"/>
                                 </FormControl>
+                                <FormMessage className="font-normal" />
                             </FormItem>
                         )}/>
                     </div>
 
-                    <div>
+                    <div className="flex gap-2">
                         <FormField control={form.control} name="birth_date" render={({field}) => (
-                            <FormItem>
+                            <FormItem className="w-[40%]">
                                 <FormLabel>Birth date</FormLabel>
                                 <FormControl>
-                                    <Input type="date" {...field} />
+                                    <Input type="date" {...field} className="border-alc-gray/40" />
                                 </FormControl>
+                                <FormMessage className="font-normal" />
                             </FormItem>
-                        )}/>
-                        <FormField control={form.control} name="gender" render={({field}) => (
-                            <FormItem>
-                                <FormLabel>Gender</FormLabel>
-                                <FormControl>
-                                    <Input type="" {...field} />
-                                </FormControl>
-                            </FormItem>
-                            
-                        )}/>
+                        )}/>                        
                         <FormField control={form.control} name="id_number" render={({field}) => (
-                            <FormItem>
+                            <FormItem className="w-[40%]">
                                 <FormLabel>ID Number</FormLabel>
                                 <FormControl>
-                                    <Input type="" {...field} />
+                                    <Input type="" {...field} className="border-alc-gray/40" />
                                 </FormControl>
-                            </FormItem>
-                            
+                                <FormMessage className="font-normal" />
+                            </FormItem>                            
+                        )}/>
+                        <FormField control={form.control} name="gender" render={({field}) => (
+                            <FormItem className="w-[20%]">
+                                <FormLabel>Gender</FormLabel>
+                                <FormControl className="background-transparent">
+                                    <select {...field} name="" id="" className="p-2 rounded-sm bg-transparent border border-alc-gray/40">
+                                        <option selected disabled className="bg-alc-gray color-alc-light-gray">Select gender</option>
+                                        <option value="M">Male</option>
+                                        <option value="F">Female</option>
+                                    </select>
+                                    {/* <Input type="select" {...field} className="border-alc-gray/40" /> */}
+                                </FormControl>
+                                <FormMessage className="font-normal" />
+                            </FormItem>                            
                         )}/>
                     </div>
                     <FormField control={form.control} name="phone" render={({field}) => (
                         <FormItem>
                             <FormLabel>Phone</FormLabel>
                             <FormControl>
-                                <Input type="" {...field} />
+                                <Input type="tel" {...field} className="border-alc-gray/40" />
                             </FormControl>
+                            <FormMessage className="font-normal" />
                         </FormItem>                    
                     )}/>
                 </div>
@@ -109,6 +118,8 @@ const UserProfileForm = ({ onSave, isLoading}: Props) => {
                 ) : (
                     <Button
                         type="submit"
+                        variant="green"
+                        className="w-[20%]"
                     >
                         Update
                     </Button>
