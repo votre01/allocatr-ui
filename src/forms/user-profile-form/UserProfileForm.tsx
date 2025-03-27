@@ -5,6 +5,13 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Input } from "@/components/ui/input";
 import LoadingButton from "@/components/LoadingButton";
 import { Button } from "@/components/ui/button";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+  } from "@/components/ui/select"
 
 const formSchema = z.object({
     first_name: z.string().min(1, "First name is required"),
@@ -39,14 +46,14 @@ const UserProfileForm = ({ onSave, isLoading}: Props) => {
         <Form {...form}>
             <form
                 onSubmit={form.handleSubmit(onSave)}
-                className="flex flex-col max-w-4xl p-12 mx-auto space-y-4"
+                className="flex flex-col w-full mx-auto space-y-4"
             >
-                <div>
+                {/* <div>
                     <h2>Profile</h2>
                     <FormDescription>
                         View and update your profile
                     </FormDescription>
-                </div>
+                </div> */}
                 <div className="space-y-4">
                     <div className="flex gap-2 justify-between items-center">
                         <FormField control={form.control} name="first_name" render={({field}) => (
@@ -92,11 +99,15 @@ const UserProfileForm = ({ onSave, isLoading}: Props) => {
                             <FormItem className="w-[20%]">
                                 <FormLabel>Gender</FormLabel>
                                 <FormControl className="background-transparent">
-                                    <select {...field} name="" id="" className="p-2 rounded-sm bg-transparent border border-alc-gray/40">
-                                        <option selected disabled className="bg-alc-gray color-alc-light-gray">Select gender</option>
-                                        <option value="M">Male</option>
-                                        <option value="F">Female</option>
-                                    </select>
+                                    <Select {...field} >
+                                        <SelectTrigger className="border-alc-gray/40">
+                                            <SelectValue placeholder="Gender" />
+                                            <SelectContent>
+                                                <SelectItem value="male">Male</SelectItem>
+                                                <SelectItem value="female">Female</SelectItem>
+                                            </SelectContent>
+                                        </SelectTrigger>
+                                    </Select>
                                     {/* <Input type="select" {...field} className="border-alc-gray/40" /> */}
                                 </FormControl>
                                 <FormMessage className="font-normal" />
@@ -113,6 +124,7 @@ const UserProfileForm = ({ onSave, isLoading}: Props) => {
                         </FormItem>                    
                     )}/>
                 </div>
+                <div className="flex justify-end">
                 {isLoading ? (
                     <LoadingButton />
                 ) : (
@@ -124,6 +136,7 @@ const UserProfileForm = ({ onSave, isLoading}: Props) => {
                         Update
                     </Button>
                 )}
+                </div>
             </form>
         </Form>
     );
