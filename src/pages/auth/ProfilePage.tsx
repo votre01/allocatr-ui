@@ -1,7 +1,6 @@
 import { Pencil } from "lucide-react";
 import {
     Dialog,
-    DialogClose,
     DialogContent,
     DialogDescription,
     DialogHeader,
@@ -13,7 +12,10 @@ import UserProfileForm from "@/forms/user-profile-form/UserProfileForm";
 const ProfilePage = () => {
     return (
         <Dialog>
-            <DialogTrigger><Pencil /></DialogTrigger>
+            <DialogTrigger
+                className="flex align-center gap-2 bg-transparent focus:outline-none hover:text-alc-gray">
+                <Pencil className="w-[18px]"/>Edit profile
+            </DialogTrigger>
             
             <DialogContent className="max-w-2xl ">           
                 <DialogHeader>

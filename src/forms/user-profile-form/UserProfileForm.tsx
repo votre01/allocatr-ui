@@ -130,8 +130,8 @@ const UserProfileForm = ({ onSave, isLoading}: Props) => {
                 ) : (
                     <Button
                         type="submit"
-                        variant="green"
-                        className="w-[20%]"
+                        variant="primary"
+                        className="w-[20%] focus:outline-none"
                     >
                         Update
                     </Button>
